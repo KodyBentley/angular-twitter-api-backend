@@ -34,6 +34,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json())
 
+/**
+ * Declaration of Express to use Api Route at '/'
+ */
 app.use('/', ApiRoutes());
 
 /**

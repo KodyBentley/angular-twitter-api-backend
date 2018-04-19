@@ -6,6 +6,9 @@ let router;
 let savedArr = [];
 
 export default () => {
+    /**
+     * Variable declaration for express router
+     */
     router = Router();
 
     /**
