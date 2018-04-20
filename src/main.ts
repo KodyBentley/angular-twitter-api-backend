@@ -14,6 +14,9 @@ import * as bodyParser from 'body-parser';
  */
 var app = express();
 
+/**
+ * Declare Api route
+ */
 import ApiRoutes from './api/tweets';
 
 /**
@@ -21,6 +24,9 @@ import ApiRoutes from './api/tweets';
  */
 import * as cors from 'cors';
 
+/**
+ * Declare Tweet controller
+ */
 import TweetsController from './controllers/tweetCrawler';
 
 
@@ -50,5 +56,8 @@ app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
 
+/**
+ * Initialize tweets controller
+ */
 TweetsController.init();
 

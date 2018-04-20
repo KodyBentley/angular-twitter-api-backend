@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import TweetsController from '../controllers/tweetCrawler';
 
+// Declare router variable
 let router;
 
 export default () => {
@@ -9,6 +10,12 @@ export default () => {
      */
     router = Router();
 
+    /**
+     * Post request 
+     * Check if hash is not equal to request payload if so empty array
+     * Declare has is request payload
+     * Call get tweets function with callback to send a status of 200
+     */
     router.post('/tweets', (req, res) => {
         if(TweetsController.hash !== req.body.data) {
             TweetsController.tweets = [];
@@ -26,5 +33,6 @@ export default () => {
         res.status(200).json(TweetsController.tweets);
     })
 
+    // Return router
     return router;
 }

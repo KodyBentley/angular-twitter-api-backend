@@ -10,6 +10,11 @@ export default class TweetCrawler {
     public static interval: number;
 
 
+    /**
+     * Public function to initialize TweetCrawler
+     * Check to see if interval is valid
+     * Call initial getTweets function
+     */
     public static init() {
         if (!TweetCrawler.interval) {
             TweetCrawler.interval = setInterval(() => {
@@ -19,6 +24,15 @@ export default class TweetCrawler {
         }
     }
 
+    /**
+     * Public function to get tweets
+     * Declare parameter object
+     * Initialize Twitter Api 
+     * Declare variable for valid tweets
+     * Concat valid tweets
+     * Initialize callback function
+     * @param cb Callback function
+     */
     public static getTweets(cb:Function = null) {
         var params = {
             q: '#' + TweetCrawler.hash,
@@ -36,7 +50,6 @@ export default class TweetCrawler {
                 let validTweets = Validator(data, TweetCrawler.tweets);
                 TweetCrawler.tweets = TweetCrawler.tweets.concat(validTweets);
             }
-            console.log(TweetCrawler.tweets.length);
             if(cb) {
                 cb()
             }
