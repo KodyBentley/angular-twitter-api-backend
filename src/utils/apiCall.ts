@@ -3,7 +3,7 @@
 */
 import * as Twitter from 'twitter'
 
-export default (params: Object, cb:Function ) => {
+export default (params: Object, cb: Function) => {
     /**
      * Declaration of new Twitter object with parameters from twitter app passed in
      */
@@ -15,13 +15,13 @@ export default (params: Object, cb:Function ) => {
     });
 
     /**
-         * Twitter NPM Module get function
-         */
+     * Twitter NPM Module get function
+     */
     client.get('search/tweets', params, function (error, tweets, response) {
-            /**
-             * Callback to handle error, as well as data
-             */
-            cb(error, tweets.statuses);
+        /**
+         * Callback to handle error, as well as data
+         */
+        cb(error, tweets.statuses);
     });
 
 }

@@ -21,6 +21,10 @@ import ApiRoutes from './api/tweets';
  */
 import * as cors from 'cors';
 
+import TweetsController from './controllers/tweetCrawler';
+
+
+
 /**
  * Declaration of Express to use CORS 
  */
@@ -45,3 +49,6 @@ app.use('/', ApiRoutes());
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
+
+TweetsController.init();
+
