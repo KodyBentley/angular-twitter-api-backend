@@ -34,7 +34,7 @@ export default class TweetCrawler {
      * @param cb Callback function
      */
     public static getTweets(cb:Function = null) {
-        var params = {
+        var params: Object = {
             q: '#' + TweetCrawler.hash,
             count: 1000,
             result_type: 'recent',
@@ -48,7 +48,7 @@ export default class TweetCrawler {
                 return;
             } else {
                 let validTweets = Validator(data, TweetCrawler.tweets);
-                TweetCrawler.tweets = TweetCrawler.tweets.concat(validTweets);
+                TweetCrawler.tweets = validTweets.concat(TweetCrawler.tweets);
             }
             if(cb) {
                 cb()

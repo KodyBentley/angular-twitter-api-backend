@@ -7,7 +7,7 @@ export default (params: Object, cb: Function) => {
     /**
      * Declaration of new Twitter object with parameters from twitter app passed in
      */
-    let client = new Twitter({
+    let client: Twitter = new Twitter({
         consumer_key: 'mnTvqfWZeXEYug3zbNR0HU1pz',
         consumer_secret: 'kOt2PBWSxK4cKNrcVwVQCoF8pbOXMZu2wkmCnFhSIMXdaGVqh6',
         access_token_key: '1210186566-2XbsiqKCVveRIDBfFLv88Y0lk9vmRXhwfnrlvRL',

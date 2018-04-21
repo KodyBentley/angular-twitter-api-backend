@@ -6,7 +6,7 @@ export default (data, currentTweets) => {
      * Check if tweet already exists and if not push to valid array
      * Return validTweet array
      */
-    let validTweet = [];
+    let validTweet:Array<any> = [];
     for (let i of data) {
         if (i.entities.media !== undefined) {
             if (!exists(currentTweets, i)) {

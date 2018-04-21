@@ -2,7 +2,7 @@ import { Router } from 'express';
 import TweetsController from '../controllers/tweetCrawler';
 
 // Declare router variable
-let router;
+let router: Router;
 
 export default () => {
     /**
